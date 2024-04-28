@@ -54,18 +54,3 @@ const showFlowers = () => {
 // When the DOM is fully loaded, we run the showFlowers function
 document.addEventListener("DOMContentLoaded", showFlowers);
 
-
-
-// Check if the browser supports service workers
-if ("serviceWorker" in navigator) {
-    // If it does, add an event listener for the load event
-  window.addEventListener("load", function() {
-    // When the page is fully loaded, register the service worker
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      // If the registration is successful, log a message to the console
-      .then(res => console.log("service worker registered"))
-       // If the registration fails, log the error to the console
-      .catch(err => console.log("service worker not registered", err));
-  });
-}
