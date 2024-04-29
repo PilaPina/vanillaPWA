@@ -36,6 +36,7 @@ self.addEventListener("fetch", fetchEvent => {
   // otherwise, go ahead and try to get it from the network.
   fetchEvent.respondWith(
     caches.match(fetchEvent.request).then(res => {
+      console.log("it's cached!")
       return res || fetch(fetchEvent.request);
     })
   );
