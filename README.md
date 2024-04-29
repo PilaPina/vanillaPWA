@@ -5,8 +5,8 @@ You are going to change it into an  all powerful installable and offline-browsab
 
 We are going to create a web manifest, hire a service worker and register them to our payroll. And then we are going to give them the job of caching our assets so we can look at our pretty page even though we don't have any internet. And then we will have our trusty dev tools see if the worker is doing their job. 
 
-1. create a manifest
-2. create a service worker file where the job is defined. <br>
+1. create a manifest.json and link it to the <head> in index.html
+2. create a service worker file where the job is defined. Call it serviceWorker.js<br>
 We want them to cache assets, handle the installation and serve the cached assets when there is not network. 
-3. register the service worker
-4. inspect and see if the job is done
+3. register the service worker at the bottom of the app.js file. 
+4. inspect with dev tools and see the magic. 
