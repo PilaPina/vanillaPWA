@@ -7,28 +7,34 @@ const container = document.querySelector(".container");
 // define an array for our images
 const flowers = [
   {
-    name: "first one",
-    image: "images/flower1.jpg"
+    name: "Flower 1",
+    image: "images/flower1.jpg",
+    alt: "A bouquet of flowers"
   },
   {
-    name: "second one",
-    image: "images/flower2.jpg"
+    name: "Flower 2",
+    image: "images/flower2.jpg",
+    alt: "A close up of small white and pink flowers"
   },
   {
-    name: "third one",
-    image: "images/flower3.jpg"
+    name: "Flower 3",
+    image: "images/flower3.jpg",
+    alt: "White flowers with a green background"
   },
   {
-    name: "fourth one",
-    image: "images/flower4.jpg"
+    name: "Flower 4",
+    image: "images/flower4.jpg",
+    alt: "A close up of two flowers"
   },
   {
-    name: "fifth one",
-    image: "images/flower5.jpg"
+    name: "Flower 5",
+    image: "images/flower5.jpg",
+    alt: "Red roses with a black background"
   },
   {
-    name: "sixth one",
-    image: "images/flower6.jpg"
+    name: "Flower 6",
+    image: "images/flower6.jpg",
+    alt: "View from above of the hands of a person arranging a bouquet of flowers "
   },
 ];
 
@@ -37,11 +43,11 @@ const showFlowers = () => {
   let output = "";
   // Loop over each flower object in the array
   flowers.forEach(
-    ({ name, image }) =>
+    ({ name, image, alt }) =>
     // For each flower, add a card to the output string
       (output += `
               <div class="card">
-                <img class="cardimage" src=${image} />
+                <img class="cardimage" src=${image} alt=${alt ? alt : name} />
                 <h1 class="cardtitle">${name}</h1>
               </div>
        `)

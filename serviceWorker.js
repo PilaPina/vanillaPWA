@@ -8,7 +8,8 @@ const assets = [
     "/index.html",    // Our html,
     "/style.css",     // our styles
     "/app.js",        // and our javascript 
-    './images/flower1.jpg',  // and our assets
+                      // and our assets
+    './images/flower1.jpg',  
     './images/flower2.jpg',
     './images/flower3.jpg',
     './images/flower4.jpg',
@@ -29,6 +30,7 @@ self.addEventListener("install", installEvent => {
   );
 });
 
+
 //Then we do another eventListener for fetching our cache. 
 //This is fired everytime the browser requests a resource. 
 self.addEventListener("fetch", fetchEvent => {
@@ -36,7 +38,10 @@ self.addEventListener("fetch", fetchEvent => {
   // otherwise, go ahead and try to get it from the network.
   fetchEvent.respondWith(
     caches.match(fetchEvent.request).then(res => {
+      // If the resource is found in the cache (if res is truthy) then we get a message in console
       console.log("it's cached!")
+      // Return the cached resource if it's found (res is truthy).
+      // If the resource is not found in the cache (res is falsy), fetch it from the network.
       return res || fetch(fetchEvent.request);
     })
   );
